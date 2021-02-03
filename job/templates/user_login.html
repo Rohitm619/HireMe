@@ -1,0 +1,50 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+
+<nav class="navbar navbar-dark bg-dark" style="width:80%; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px;">
+  <div class="container-fluid">
+      <h3 style="color:white; margin-left:auto; margin-right:auto;"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>&nbsp;<b>User Login</b><h3>
+  </div>
+</nav>
+
+
+<div style="margin-top:30px; margin-left:auto; margin-right:auto; width:40%;">
+<form method="post">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="uname">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="pwd">
+  </div>
+  <button style="margin-top:10px;" type="submit" class="btn btn-primary">Login</button> &nbsp; &nbsp;
+  <a style="margin-top:10px;" href="{% url 'user_signup' %}" class="btn btn-primary">New? Sign up here</a>
+</form>
+</div>
+
+
+
+{% ifequal error "no"  %}
+<script>
+alert("Log In Successful!")
+window.location = ('{% url 'user_home' %}')
+</script>
+{% endifequal %}
+
+{% ifequal error "yes"  %}
+<script>
+alert("Invalid Credentials!");
+</script>
+{% endifequal %}
+
+
+
+{% include 'footer.html' %}
+{% endblock body %}

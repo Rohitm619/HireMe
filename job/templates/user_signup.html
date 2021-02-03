@@ -1,0 +1,107 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<script>
+function checkpass(){
+    if(document.signup.pwd.value!=document.signup.cpwd.value){
+        alert("Passwords do not match!");
+        document.signup.cpwd.focus();
+        return false;
+    }
+    return true;
+}
+
+</script>
+
+
+
+
+<nav class="navbar navbar-dark bg-dark" style="width:80%; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px;">
+  <div class="container-fluid">
+      <h3 style="color:white; margin-left:auto; margin-right:auto;"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>&nbsp;<b>USER SIGNUP</b><h3>
+  </div>
+</nav>
+
+
+
+<div style="width:80%; margin-top:30px; margin-left:auto; margin-right:auto;">
+<form method="post" onsubmit="return checkpass();" name="signup" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="row g-3">
+  <div class="col">
+    <label for="inputFirstName" class="form-label">First Name</label>
+    <input type="text" class="form-control" id="inputFirstName" name="fname" placeholder="Enter your first name" required>
+  </div>
+  <div class="col">
+    <label for="inputLastName" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="inputLastName" name="lname" placeholder="Enter your last name" required>
+  </div>
+</div>
+
+<div class="row g-3" style="margin-top:10px;">
+  <div class="col">
+    <label for="contact" class="form-label">Contact Number</label>
+    <input type="mobile" class="form-control" id="contact" name="contact" placeholder="Enter your mobile name" required>
+  </div>
+  <div class="col">
+    <label for="email" class="form-label">Email Address</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+  </div>
+</div>
+
+<div class="row g-3" style="margin-top:10px;">
+  <div class="col">
+    <label for="pwd" class="form-label">Password</label>
+    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Set a new password" required>
+  </div>
+  <div class="col">
+    <label for="cpwd" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" id="cpwd" name="cpwd" placeholder="Confirm your password" required>
+  </div>
+</div>
+
+<div class="row g-3" style="margin-top:10px;">
+  <div class="col">
+    <label style="margin-bottom:5px;">Gender</label>
+    <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline1" class="custom-control-input" name="gender" value="Male">
+    <label class="custom-control-label" for="customRadioInline1">Male</label>
+    </div>
+
+    <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline2" class="custom-control-input" name="gender" value="Female">
+    <label class="custom-control-label" for="customRadioInline2">Female</label>
+    </div>
+
+  </div>
+  <div class="col">
+    <label for="formFile" class="form-label">Set Profile Picture</label>
+    <input class="form-control" type="file" name="image" id="formFile" required>
+  </div>
+</div>
+<div style="margin-top:20px; width:100%">
+ <button type="submit" value="Sign Up" class="btn btn-primary" style="width:70%; margin-left:15%;"><b>Sign Up</b></button> 
+ </div>
+</form>
+</div>
+
+
+{% ifequal error "no"  %}
+<script>
+alert("Sign Up Successful!")
+window.location = ('{% url 'user_login' %}')
+</script>
+{% endifequal %}
+
+{% ifequal error "yes"  %}
+<script>
+alert("Something went wrong! Please, try again!");
+</script>
+{% endifequal %}
+
+
+{% include 'footer.html' %}
+{% endblock body %}
