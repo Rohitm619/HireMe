@@ -24,3 +24,12 @@ Features of HireMe -
 - Recruiter also has to register on the website for posting jobs.
 - Recruiter has to provide ```Name, Contact Number, Email, Gender, Profile Photo, Company Name```.
 - ```Jobseeker/Recruiter can edit his name, contact number, gender, profile photo later```.
+- Once recruiter registered on the website, he has to wait till admin allow it. After allowing, he can login through the email and password that he has provided during registration.
+- Admin is the website owner, who can handle all the recruiters and jobseekers.
+- Admin can delete the recruiter and also user. Admin can refuse the recruiter request for signing up.
+- Recruiter has an option to add new jobrole, he has to provide ```Job Title, Start Date, End Date, Salary, Company Logo, Required Experience, Required Skills, Job Location(s), Description```.
+- Recruiter can edit/delete the existing job details later.
+- Once Jobseeker logged in, he/she can see all the details of the job and can apply to all the jobs posted by recruiter.
+
+
+Thank You!
