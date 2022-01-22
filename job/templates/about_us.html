@@ -1,0 +1,327 @@
+{% load static %}
+
+{% include 'navigation.html' %}
+
+<head>
+  <title>About Us - HireMe</title>
+</head>
+
+
+<style>
+  .glassy {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .15);
+
+    backdrop-filter: blur(2px);
+    padding: 20px 20px 20px 20px;
+
+  }
+
+
+  .toblue:hover{
+  font-weight: bold;
+  }
+</style>
+
+
+<div class="" style="background:url('{% static 'images/bg3.jpg' %}'); text-align: center;
+    background-repeat:no-repeat; background-size:cover; background-attachment:fixed; margin-top:5px;">
+
+
+  <h6>&nbsp;</h6>
+  <nav class="navbar navbar-dark bg-dark"
+    style="width:80%; opacity: 0.6; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px;">
+    <div class="container-fluid">
+      <h3 style="color:white; margin-left:auto; margin-right:auto;"><i class="fa fa-user-circle-o fa-fw"
+          aria-hidden="true"></i>&nbsp;<b>About Me</b>
+        <h3>
+    </div>
+  </nav>
+
+  <p>&nbsp;</p>
+  <div class="avatar mx-auto">
+    <img src="{% static 'images/user1.jpg' %}" class="rounded z-depth-1-half" alt="Sample avatar" style=" -moz-box-shadow: 2px 1px 30px gray;
+        -webkit-box-shadow: 2px 1px 30px gray; border: 3px solid gray;
+        box-shadow: 2px 1px 30px gray; width:220px; margin-bottom:30px;">
+  </div>
+
+  <ul class="list-unstyled mb-0">
+    <a href="https://www.linkedin.com/in/rohit-mahajan-3418991a7/" target="_blank">
+      <span style="color: Tomato;">
+        <i class="fa fa-linkedin fa-lg" aria-hidden="true"> </i>
+      </span>
+    </a>&nbsp;
+    <a href="https://instagram.com/rm.the_immutable" target="_blank">
+      <span style="color: Tomato;">
+        <i class="fa fa-instagram fa-lg"> </i>
+      </span>
+    </a>
+  </ul>
+
+
+  <h2 style="color:black; margin-top:10px; text-shadow: 2px 2px 3px grey;"><b>Rohit Mahajan</b></h2>
+
+
+  <center><div style="width:250px; text-align:center; margin-bottom:50px;">
+    <p style="color:grey; margin-top:10px;">An engineering student from Sinhgad Academy of Engineering, Pune. A python
+      enthusiastic full-stack web developer.</p>
+  </div>
+
+<hr style="width:70%; height:10px; border-radius: 50px;"></hr></center>
+
+  <div class="container" style="margin-top:20px; padding-top:30px;">
+
+    <center style="margin-bottom:40px;">
+      <h1 style="text-shadow:2px 2px 3px gray; font-weight:bold;">Certifications</h1>
+    </center>
+    <div class="row">
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">HackerRank (Python)</center><br>
+          <img src="{% static 'images/cert/Python Certificate by HackerRank.png' %}" style="width:85%; box-shadow:2px 2px 30px rgb(0, 255, 234);" alt=""></a>
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/Python Certificate by HackerRank.png' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/Python Certificate by HackerRank.png' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">Google - Coursera (Python)</center><br>
+          <img src="{% static 'images/cert/Coursera Python By Google-1.jpg' %}" style="width:85%; box-shadow:2px 2px 30px rgb(255, 0, 0);" alt="">
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/Coursera Python By Google-1.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/Coursera Python By Google-1.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">Cisco (Python)</center><br>
+          <img src="{% static 'images/cert/RohitMahajan-PCAP - Programmi-certificate_2-1.jpg' %}" style="width:85%; box-shadow:2px 2px 30px rgb(0, 0, 255);" alt=""></a>
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/RohitMahajan-PCAP - Programmi-certificate_2-1.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/RohitMahajan-PCAP - Programmi-certificate_2-1.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">Duke University - Coursera (HTML, CSS, JS)</center><br>
+          <img src="{% static 'images/cert/Duke University HTML-CSS-JavaScript Certificate-1.jpg' %}" style="width:85%; box-shadow:2px 2px 30px #fffb01;" alt=""></a>
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/Duke University HTML-CSS-JavaScript Certificate-1.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/Duke University HTML-CSS-JavaScript Certificate-1.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">Duke University - Coursera (Java)</center><br>
+          <img src="{% static 'images/cert/Duke University Java Programming Certificate-1.jpg' %}" style="width:85%; box-shadow:2px 2px 30px #00ff0d;" alt="">
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/Duke University Java Programming Certificate-1.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/Duke University Java Programming Certificate-1.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">Udemy (ML with R)</center><br>
+          <img src="{% static 'images/cert/ML and data science with R.jpg' %}" style="width:85%; box-shadow:2px 2px 30px rgb(255, 166, 0);" alt=""></a>
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/ML and data science with R.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/ML and data science with R.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">IIT Bombay (C)</center><br>
+          <img src="{% static 'images/cert/ROHIT-MAHAJAN-C-Certificate-1.jpg' %}" style="width:85%; box-shadow:2px 2px 30px rgb(255, 0, 200);" alt=""></a>
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/ROHIT-MAHAJAN-C-Certificate-1.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/ROHIT-MAHAJAN-C-Certificate-1.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+
+      </div>
+
+
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">IIT Bombay (Adv. Cpp)</center><br>
+          <img src="{% static 'images/cert/AdvCpp-IITB.jpg' %}" style="width:85%; box-shadow:2px 2px 30px rgb(132, 0, 255);" alt=""></a>
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/AdvCpp-IITB.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/AdvCpp-IITB.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+      </div>
+
+
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">IIT Bombay (Python)</center><br>
+          <img src="{% static 'images/cert/1Python-IITB.jpg' %}" style="width:85%; box-shadow:2px 2px 30px rgb(0, 255, 242);" alt="">
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/1Python-IITB.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/1Python-IITB.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">IIT Bombay (PHP,MySQL)</center><br>
+          <img src="{% static 'images/cert/PHP-Mysql-IITB.jpg' %}" style="width:85%; box-shadow:2px 2px 30px rgb(255, 0, 0);" alt=""></a>
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/PHP-Mysql-IITB.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/PHP-Mysql-IITB.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+
+      </div>
+
+
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">RTU Rajasthan (Web-Dev)</center><br>
+          <img src="{% static 'images/cert/Web-Development Workshop.jpg' %}" style="width:85%; box-shadow:2px 2px 30px rgb(0, 255, 0);" alt=""></a>
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/Web-Development Workshop.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/Web-Development Workshop.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+      </div>
+
+
+      <div class="col-sm-4">
+
+        <div style="margin: 10px 0 5px 0;" class="glassy">
+          <center style="font-weight:bold; text-shadow: 2px 2px 3px grey;">RTU Rajasthan (Android)</center><br>
+          <img src="{% static 'images/cert/Android Workshop certificate.jpg' %}" style="width:85%; box-shadow:2px 2px 30px rgb(0, 0, 255);" alt="">
+          <br><br>
+          <center>
+            <div style="background-color:white; width:23%; border-radius: 15px; padding-bottom:2px; box-shadow: 2px 2px gray;">
+              <a href="{% static 'images/cert/Android Workshop certificate.jpg' %}" download><i
+                  class="fa fa-arrow-circle-down fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+              &nbsp;|&nbsp;
+              <a href="{% static 'images/cert/Android Workshop certificate.jpg' %}" target="_blank">
+                <i class="fa fa-eye fa-lg toblue" aria-hidden="true" style="color:rgb(34, 34, 34);"></i></a>
+            </div>
+          </center>
+        </div>
+
+      </div>
+    </div>
+
+
+    
+
+
+
+  </div>
+</div>

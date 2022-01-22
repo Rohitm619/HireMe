@@ -4,5 +4,144 @@
 
 {% include 'user_navigation.html' %}
 
+<head>
+  <title>User Home - HireMe</title>
+</head>
 
+<style>
+
+  .boldy{
+        font-weight:bold;
+      }
+
+      
+  </style>
+  
+  
+  <nav class="navbar navbar-dark bg-dark"
+    style="width:80%; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px;">
+    <div class="container-fluid">
+      <h3 style="color:white; margin-left:auto; margin-right:auto;"><i class="fa fa-user-circle-o fa-fw"
+          aria-hidden="true"></i>&nbsp;<b>Profile</b>
+        <h3>
+    </div>
+  </nav>
+  
+  <center><marquee style="color:orange; border-radius: 50px; height:27px; margin-top:30px;" class="container" behavior="" direction=""><p><i class="fa fa-exclamation-triangle">&nbsp;</i>Some images can't be displayed because of server issue.</p></marquee></center>
+
+  <div style="width:90%; margin-top:30px; margin-left:auto; margin-right:auto;">
+    <form method="post" name="signup" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+  
+      <div>
+        <div class="row">
+          <div class="col-sm-5" style="margin:auto;">
+  
+            <div>
+              <center>
+                <img src="{{student.image.url}}" alt="Logo" style="width:50%;">
+              </center>
+            </div>
+          </div>
+          <div class="col-sm-7">
+  
+            <div class="col">
+              <label for="inputFirstName" class="form-label boldy">First Name</label>
+              <input type="text" class="form-control" id="inputFirstName" name="fname" value={{student.user.first_name}}
+                required>
+            </div>
+            <div class="col" style="margin-top:20px;">
+              <label for="inputLastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="inputLastName" name="lname" value={{student.user.last_name}}
+                required>
+            </div>
+            <div class="col" style="margin-top:20px;">
+              <label for="contact" class="form-label">Contact Number</label>
+              <input type="mobile" class="form-control" id="contact" name="contact" value={{student.mobile}} required>
+            </div>
+            <div class="col" style="margin-top:20px;">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" value={{student.user.username}} readonly
+                required>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+  
+  
+  
+  
+      <div class="row" style="margin-top:20px; margin-bottom:20px;">
+        <label style="margin-bottom:5px;">Gender</label>
+        {% if student.gender == "Male" %}
+        <div class="col-sm-5">
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline1" class="custom-control-input" name="gender" value="Male" checked>
+            <label class="custom-control-label" for="customRadioInline1">Male</label>
+          </div>
+  
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline2" class="custom-control-input" name="gender" value="Female">
+            <label class="custom-control-label" for="customRadioInline2">Female</label>
+          </div>
+        </div>
+  
+        {% else %}
+        <div class="col-sm-5">
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline1" class="custom-control-input" name="gender" value="Male">
+            <label class="custom-control-label" for="customRadioInline1">Male</label>
+          </div>
+  
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline2" class="custom-control-input" name="gender" value="Female" checked>
+            <label class="custom-control-label" for="customRadioInline2">Female</label>
+          </div>
+        </div>
+  
+        {% endif %}
+  
+  
+        <div class="col-sm-7" style="margin-top: 20px;">
+          <label for="formFile" class="form-label">Change Profile Picture</label>
+          <input class="form-control" type="file" name="image" id="formFile">
+        </div>
+      </div>
+  
+
+  
+      <div style="margin-top:20px; width:100%">
+        <button type="submit" value="Sign Up" class="btn btn-primary" style="width:70%; margin-left:15%;"><b>Save
+            Changes</b></button>
+      </div>
+  
+  
+  
+  
+    </form>
+  </div>
+  
+  
+  {% ifequal error "no"  %}
+  <script>
+    alert("Profile Updated Successfully!")
+    window.location = ('{% url 'user_home' %}')
+  </script>
+  {% endifequal %}
+  
+  {% ifequal error "yes"  %}
+  <script>
+    alert("Something went wrong! Please, try again!");
+  </script>
+  {% endifequal %}
+  
+
+
+
+<div style="background-color:#232323; 
+bottom: 0; width: 100%; margin: top 100px; padding: 15px 10px 10px 10px; text-align:center;">
+  <h6 style="color:white;"><b>Copyright&nbsp;<i class="fa fa-copyright fa-fw"></i>&nbsp;2021 Rohit Mahajan IND, Inc. All rights reserved.&nbsp;(088-5693-0080)</b></h6>
+<div>
 {% endblock body %}

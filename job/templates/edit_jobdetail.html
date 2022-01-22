@@ -1,0 +1,108 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'recruiter_navigation.html' %}
+
+<head>
+  <title>Edit Job Details - HireMe</title>
+</head>
+
+<nav class="navbar navbar-dark bg-dark" style="width:80%; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px;">
+    <div class="container-fluid">
+        <h3 style="color:white; margin-left:auto; margin-right:auto; margin-bottom:auto;"><i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i>&nbsp;<b>Edit Job Details</b><h3>
+    </div>
+  </nav>
+  
+  <center><marquee style="color:orange; border-radius: 50px; height:27px; margin-top:30px;" class="container" behavior="" direction=""><p><i class="fa fa-exclamation-triangle">&nbsp;</i>Some images can't be displayed because of server issue.</p></marquee></center>
+  
+  <div style="width:80%; margin-top:30px; margin-left:auto; margin-right:auto;">
+  <form method="post" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <i><p style="text-align: right; color:red;">*All fields are mendatory</p></i>
+  <div class="row g-3">
+    <div class="col">
+      <label for="inputFirstName" class="form-label">Job Title</label>
+      <input type="text" class="form-control" id="jobtitle" name="jobtitle" value="{{job.title}}" required>
+    </div>
+  </div>
+  
+  <div class="row g-3" style="margin-top:10px;">
+    <div class="col">
+      <label for="startdate" class="form-label">Start Date</label> <i>({{job.start_date}})</i>
+      <input type="date" class="form-control" id="startdate" name="startdate" >
+    </div>
+    <div class="col">
+      <label for="enddate" class="form-label">End Date</label> <i>({{job.end_date}})</i>
+      <input type="date" class="form-control" id="enddate" name="enddate" >
+    </div>
+  </div>
+  
+  <div class="row g-3" style="margin-top:10px;">
+    <div class="col">
+      <label for="salary" class="form-label">Salary (per month)</label>
+      <input type="text" class="form-control" id="salary" name="salary" value="{{job.salary}}" required>
+    </div>
+    <div class="col">
+      <label for="logo" class="form-label">Company Logo : </label>
+      <img src="{{job.image.url}}" style="width:100px; height:100px; border-radius: 50px;" alt="logo">&nbsp;&nbsp;<a href="{% url 'change_companylogo' job.id %}" class="btn btn-outline-primary btn-sm">Change Logo</a>
+    </div>
+  </div>
+
+
+  <div class="col" style="margin-top:20px;">
+    
+      <label for="experience" class="form-label">Required Experience (in years)</label>
+      <input type="number" min="0" class="form-control" id="experience" name="experience" value="{{job.experience}}" required>
+    </div>
+
+
+    <div class="col" style="margin-top:20px;">
+      <label for="Skills" class="form-label">Required Skills (Seperated by comma)</label>
+      <input type="text" class="form-control" id="Skills" name="skills" value="{{job.skills}}" required>
+    </div>
+
+    <div class="col" style="margin-top:20px;">
+      <label for="location" class="form-label">Job Location(s)</label>
+      <input type="text" class="form-control" id="location" name="location" value="{{job.location}}" required>
+    </div>
+  
+  
+  
+  
+  
+    <div class="col" style="margin-top: 20px;">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" name="description"  required>{{job.description}}</textarea>
+    </div>
+  
+  <div style="margin-top:20px; width:100%">
+   <button type="submit" value="Add Job" class="btn btn-primary" style="width:70%; margin-left:15%;"><b>Save Changes</b></button> 
+   </div>
+  
+  
+  
+  
+  </form>
+  </div>
+  
+  
+  {% ifequal error "no"  %}
+  <script>
+  alert("Job has been updated successfully!")
+  window.location = ('{% url 'edit_jobdetail' job.id %}')
+  </script>
+  {% endifequal %}
+  
+  {% ifequal error "yes"  %}
+  <script>
+  alert("Something went wrong! Please, try again!");
+  </script>
+  {% endifequal %}
+  
+
+  <div style="background-color:#232323; bottom:0px; padding: 15px 10px 10px 10px; text-align:center;">
+    <h6 style="color:white;"><b>Copyright&nbsp;<i class="fa fa-copyright fa-fw"></i>&nbsp;2021 Rohit Mahajan IND, Inc. All rights reserved.&nbsp;(088-5693-0080)</b></h6>
+  <div>
+{% endblock body %}

@@ -1,0 +1,55 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'admin_navigation.html' %}
+
+<head>
+  <title>Change Status - HireMe</title>
+</head>
+
+
+<nav class="navbar navbar-dark bg-dark" style="width:80%; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px;">
+  <div class="container-fluid">
+      <h3 style="color:white; margin-left:auto; margin-right:auto;"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>&nbsp;<b>Change Recruiter Status</b><h3>
+  </div>
+</nav>
+
+
+<div style="margin-top:30px; margin-left:auto; margin-right:auto; width:40%;">
+<form method="post">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Recruiter Name</label>
+    <input type="text" class="form-control" name="uname" value="{{recruiter.user.first_name}} {{recruiter.user.last_name}}">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Select Status</label>
+    <select class="form-control" name="status">
+      <option value="Accept">Accept</option>
+      <option value="Reject">Reject</option>
+    </select>
+
+  </div>
+  <button type="submit" class="btn btn-primary">Change</button>
+</form>
+</div>
+
+
+{% ifequal error "no"  %}
+<script>
+alert("Status Changed Successfully!")
+window.location = ('{% url 'recruiter_pending' %}')
+</script>
+{% endifequal %}
+
+{% ifequal error "yes"  %}
+<script>
+alert("Something went wrong!");
+</script>
+{% endifequal %}
+
+
+
+{% include 'footer.html' %}
+{% endblock body %}

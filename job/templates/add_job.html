@@ -1,0 +1,106 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'recruiter_navigation.html' %}
+
+
+
+<nav class="navbar navbar-dark bg-dark" style="width:80%; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px;">
+    <div class="container-fluid">
+        <h3 style="color:white; margin-left:auto; margin-right:auto; margin-bottom:auto;"><i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i>&nbsp;<b>Add Job Details</b><h3>
+    </div>
+  </nav>
+  
+  
+  
+  <div style="width:80%; margin-top:30px; margin-left:auto; margin-right:auto;">
+  <form method="post" onsubmit="return checkpass();" name="signup" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  <i><p style="text-align: right; color:red;">*All fields are mendatory</p></i>
+  <div class="row g-3">
+    <div class="col">
+      <label for="inputFirstName" class="form-label">Job Title</label>
+      <input type="text" class="form-control" id="jobtitle" name="jobtitle" placeholder="Enter Job Title" required>
+    </div>
+  </div>
+  
+  <div class="row g-3" style="margin-top:10px;">
+    <div class="col">
+      <label for="startdate" class="form-label">Start Date</label>
+      <input type="date" class="form-control" id="startdate" name="startdate" required>
+    </div>
+    <div class="col">
+      <label for="enddate" class="form-label">End Date</label>
+      <input type="date" class="form-control" id="enddate" name="enddate" required>
+    </div>
+  </div>
+  
+  <div class="row g-3" style="margin-top:10px;">
+    <div class="col">
+      <label for="salary" class="form-label">Salary (per month)</label>
+      <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter the salary for the role" required>
+    </div>
+    <div class="col">
+      <label for="logo" class="form-label">Company Logo</label>
+      <input type="file" class="form-control" id="logo" name="logo" placeholder="Confirm your password" required>
+    </div>
+  </div>
+
+
+  <div class="col" style="margin-top:20px;">
+    
+      <label for="experience" class="form-label">Required Experience (in years)</label>
+      <input type="number" min="0" class="form-control" id="experience" name="experience" placeholder="Enter the required experience for the job role" required>
+    </div>
+
+
+    <div class="col" style="margin-top:20px;">
+      <label for="Skills" class="form-label">Required Skills (Seperated by comma)</label>
+      <input type="text" class="form-control" id="Skills" name="skills" placeholder="Enter the required skills for the job role" required>
+    </div>
+
+    <div class="col" style="margin-top:20px;">
+      <label for="location" class="form-label">Job Location(s)</label>
+      <input type="text" class="form-control" id="location" name="location" placeholder="Enter the job location(s)" required>
+    </div>
+  
+  
+  
+  
+  
+    <div class="col" style="margin-top: 20px;">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" name="description" placeholder="Enter the job description" required></textarea>
+    </div>
+  
+  <div style="margin-top:20px; width:100%">
+   <button type="submit" value="Add Job" class="btn btn-primary" style="width:70%; margin-left:15%;"><b>Add Job</b></button> 
+   </div>
+  
+  
+  
+  
+  </form>
+  </div>
+  
+  
+  {% ifequal error "no"  %}
+  <script>
+  alert("Job has been published successfully!")
+  window.location = ('{% url 'job_list' %}')
+  </script>
+  {% endifequal %}
+  
+  {% ifequal error "yes"  %}
+  <script>
+  alert("Something went wrong! Please, try again!");
+  </script>
+  {% endifequal %}
+  
+
+  <div style="background-color:#232323; bottom:0px; padding: 15px 10px 10px 10px; text-align:center;">
+    <h6 style="color:white;"><b>Copyright&nbsp;<i class="fa fa-copyright fa-fw"></i>&nbsp;2021 Rohit Mahajan IND, Inc. All rights reserved.&nbsp;(088-5693-0080)</b></h6>
+  <div>
+{% endblock body %}

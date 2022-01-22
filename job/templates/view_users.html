@@ -4,6 +4,10 @@
 
 {% include 'admin_navigation.html' %}
 
+<head>
+  <title>View Users - HireMe</title>
+</head>
+
 <nav class="navbar navbar-dark bg-dark" style="width:80%; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px;">
   <div class="container-fluid">
       <h3 style="color:white; margin-left:auto; margin-right:auto;"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>&nbsp;<b>Users</b><h3>
@@ -34,7 +38,7 @@
         <td>{{i.mobile}}</td>
         <td>{{i.gender}}</td>
         <td><img src="{{i.image.url}}" style="width:100px; height:100px; border-radius:50%;"></td>
-        <td><a class="btn btn-danger btn-sm" href="{% url 'delete_user' i.id %}" onclick="return confirm('Are you sure you want to delete the user?')" style="border-radius:30px;"><i class="fa fa-remove"></i>&nbsp;Delete</a></td>
+        <td><a class="btn btn-danger btn-sm" href="{% url 'delete_user' i.user.id %}" onclick="return confirm('Are you sure you want to delete the user?')" style="border-radius:30px;"><i class="fa fa-remove"></i>&nbsp;Delete</a></td>
         
     </tr>
     
@@ -44,5 +48,8 @@
 </div>
 
 
-{% include 'footer.html' %}
+<div style="background-color:#232323; position: fixed;
+bottom: 0; width: 100%; margin-top: 20px; padding: 15px 10px 10px 10px; text-align:center;">
+  <h6 style="color:white;"><b>Copyright&nbsp;<i class="fa fa-copyright fa-fw"></i>&nbsp;2021 Rohit Mahajan IND, Inc. All rights reserved.&nbsp;(088-5693-0080)</b></h6>
+<div>
 {% endblock body %}

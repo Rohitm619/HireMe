@@ -1,0 +1,54 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'recruiter_navigation.html' %}
+
+<head>
+  <title>Job List - HireMe</title>
+</head>
+
+<center><marquee style="color:orange; border-radius: 50px; height:27px; margin-top:30px;" class="container" behavior="" direction=""><p><i class="fa fa-exclamation-triangle">&nbsp;</i>Some images can't be displayed because of server issue.</p></marquee></center>
+
+
+<nav class="navbar navbar-dark bg-dark" style="width:80%; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px;">
+    <div class="container-fluid">
+        <h3 style="color:white; margin-left:auto; margin-right:auto;"><i class="fa fa-list-ul fa-fw" aria-hidden="true"></i>&nbsp;<b>Job List</b><h3>
+    </div>
+  </nav>
+
+
+  <div class="container table-responsive" style="margin-top:25px;">
+    <table class="table table-hover" id="example" style="margin-top:25px;">
+        <thead>
+        <tr style="text-align:center;">
+            <th>Sr. No.</th>
+            <th>Job Title</th>
+            <th>Creation Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+    
+        <tbody>
+        {% for i in job %}
+        
+        <tr style="text-align:center;">
+            <td>{{forloop.counter}}</td>
+            <td>{{i.title}}</td>
+            <td>{{i.creationdate}}</td>
+            <td><a class="btn btn-success btn-sm" href="{% url 'edit_jobdetail' i.id %}"style="border-radius:30px; width:80px; margin-bottom:5px;"><i class="fa fa-edit"></i>&nbsp;Edit</a>
+           <br>   <a class="btn btn-danger btn-sm" href="#" style="border-radius:30px; width:80px; margin-bottom:10px;"><i class="fa fa-remove"></i>&nbsp;Delete</a>
+            </td>
+        </tr>
+        
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+
+<div style="background-color:#232323; position: relative;
+bottom: 0; width: 100%; padding: 15px 10px 10px 10px; text-align:center;">
+  <h6 style="color:white;"><b>Copyright&nbsp;<i class="fa fa-copyright fa-fw"></i>&nbsp;2021 Rohit Mahajan IND, Inc. All rights reserved.&nbsp;(088-5693-0080)</b></h6>
+<div>
+{% endblock body %}

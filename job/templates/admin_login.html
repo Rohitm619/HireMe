@@ -4,27 +4,40 @@
 
 {% include 'navigation.html' %}
 
+<head>
+  <title>Admin Login - HireMe</title>
+</head>
 
-<nav class="navbar navbar-dark bg-dark" style="width:80%; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px;">
+<style>
+  .login-btn{
+ border-radius:20px;
+ width: 100px;
+ font-weight: bold;
+}
+</style>
+
+
+<nav class="navbar navbar-dark bg-dark" style="width:80%; margin-top:40px; margin-left:auto; margin-right:auto; border-radius: 30px; ">
   <div class="container-fluid">
-      <h3 style="color:white; margin-left:auto; margin-right:auto;"><i class="fa fa-key fa-fw" aria-hidden="true"></i>&nbsp;<b>Admin Login</b><h3>
+      <h3 style="color:white; margin-left:auto; margin-right:auto;"><i class="fa fa-key fa-fw" aria-hidden="true"></i>&nbsp;<b>Admin Login</b></h3>
   </div>
 </nav>
 
 
 <div style="margin-top:30px; margin-left:auto; margin-right:auto; width:40%;">
+  <i><p style="text-align: right; color:red;">*For admin use only</p></i>
 <form method="post">
     {% csrf_token %}
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Username</label>
-    <input type="text" class="form-control" name="uname">
+    <input type="text" class="form-control" name="uname" required>
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" name="pwd">
+    <input type="password" class="form-control" name="pwd" required>
   </div>
-  <button type="submit" class="btn btn-primary">Login</button>
+  <button type="submit" class="btn btn-primary login-btn">Login</button>
 </form>
 </div>
 
@@ -42,6 +55,4 @@ alert("Invalid Credentials!");
 </script>
 {% endifequal %}
 
-
-{% include 'footer.html' %}
 {% endblock body %}

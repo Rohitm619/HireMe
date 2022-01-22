@@ -1,87 +1,141 @@
 <html>
+
 <head>
-{% load static %}
-<title>Welcome to HireMe : Your online job Portal</title>
-<link rel="shortcut icon" type="image/jpg" href="{% static 'images/logo2.png' %}"/>
+  {% load static %}
+  
+  <link rel="shortcut icon" type="image/jpg" href="{% static 'images/logo2.png' %}" />
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<style>
-.nav-item:hover{
-    font-weight: bold;
+  <style>
+
+body::-webkit-scrollbar-track
+{
+	border: 1px solid black;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: #000000;	
 }
 
 
-</style>
+
+    
+    .nav-item:hover {
+      font-weight: bold;
+    }
+
+    .socialic:hover{
+      box-shadow:1px 1px 10px white;
+    }
+
+    html {
+  scroll-behavior: smooth;
+}
+
+  </style>
+
+ 
 
 </head>
 
-<body style="background-color: #f2f2f2;">
+<body class="body">
 
 
-<div class="container-fluid" style="background-color:#232323;">
+  <div class="container-fluid" style="background-color:#232323;">
 
-  <div class="row">
-    <div class="col-sm-2" style="text-align: center; margin: auto;">
-      <img src="{% static 'images/logo2.png' %}" alt="HireMe" width="100px" height="100px">
-    </div>
+    <div class="row">
+      <div class="col-sm-2" style="text-align: center; margin: auto;">
+       <a href="/"> <img src="{% static 'images/logo2.png' %}" alt="HireMe" width="100px" height="100px"></a>
+      </div>
 
-    <div class="col-sm-8" style="text-align: center; margin: auto;">
-      <h1 style="color:white;"><b>Welcome to HireMe</b></h1>
-      <h6 style="color:grey;"><b>Your online job Portal</b></h6>
-    </div>
+      <div class="col-sm-8" style="text-align: center; margin: auto;">
+        <h1 style="color:white;"><b>Welcome to HireMe</b></h1>
+        <h6 style="color:grey;"><b>Your online job Portal</b></h6>
+      </div>
 
 
-    <div class="col-sm-2" style="text-align: center; margin: auto;">
-      <h6 style="color:white;">Contact Us</h6>
-     
-    <div style="margin-bottom:5px;">
-    <a href="https://www.linkedin.com/in/rohit-mahajan-3418991a7/" target="_blank">
-      <img src="{% static 'images/LI.png' %}" width="21px"></a>
-    
-       <a href="https://instagram.com/rm.the_immutable" target="_blank">
-      <img src="{% static 'images/IG.png' %}" width="21px">
-    </a>
+      <div class="col-sm-2" style="text-align: center; margin: auto;">
+        <h6 style="color:white;">Contact Us</h6>
+
+        <div style="margin-bottom:5px;">
+          <a href="https://www.linkedin.com/in/rohit-mahajan-3418991a7/" target="_blank">
+            <img class="socialic" src="{% static 'images/LI.png' %}" width="21px"></a>
+
+          <a href="https://instagram.com/rm.the_immutable" target="_blank">
+            <img class="socialic" src="{% static 'images/IG.png' %}" width="21px">
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
 
-</div>
-</div>
-
-
-<ul class="nav nav-pills justify-content-center" style="background-color:grey; margin-top:5px;">
-  <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-top:5px; margin-bottom:5px;">
-    <a class="nav-link active" href="{% url 'index' %}"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
-  </li>
-  <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-bottom:5px;">
-    <a class="nav-link active" href="#"><i class="fa fa-bell fa-fw" aria-hidden="true"></i>&nbsp;Latest Jobs</a>
-  </li>
-  <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-bottom:5px;">
-    <a class="nav-link active" href="{% url 'user_login' %}"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>&nbsp;User Login</a>
-  </li>
-  <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-bottom:5px;">
-    <a class="nav-link active" href="{% url 'recruiter_login' %}"><i class="fa fa-institution fa-fw" aria-hidden="true"></i>&nbsp;Recruiter Login</a>
-  </li>
+  <ul class="nav nav-pills justify-content-center" style="background-color:grey; margin-top:5px;">
+    <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-top:5px; margin-bottom:5px;">
+      <a class="nav-link active" href="{% url 'index' %}"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;
+        Home</a>
+    </li>
     <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-bottom:5px;">
-    <a class="nav-link active" href="{% url 'admin_login' %}"><i class="fa fa-key fa-fw" aria-hidden="true"></i>&nbsp;Admin Login</a>
-  </li>
+      <a class="nav-link active" href="{% url 'latest_jobs' %}"><i class="fa fa-bell fa-fw" aria-hidden="true"></i>&nbsp;Latest Jobs</a>
+    </li>
     <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-bottom:5px;">
-    <a class="nav-link active" href="#"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;About Us</a>
-  </li>
-</ul>
+      <a class="nav-link active" href="{% url 'user_login' %}"><i class="fa fa-user-circle-o fa-fw"
+          aria-hidden="true"></i>&nbsp;User Login</a>
+    </li>
+    <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-bottom:5px;">
+      <a class="nav-link active" href="{% url 'recruiter_login' %}"><i class="fa fa-institution fa-fw"
+          aria-hidden="true"></i>&nbsp;Recruiter Login</a>
+    </li>
+    <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-bottom:5px;">
+      <a class="nav-link active" href="{% url 'admin_login' %}"><i class="fa fa-key fa-fw"
+          aria-hidden="true"></i>&nbsp;Admin Login</a>
+    </li>
+    <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-bottom:5px;">
+      <a class="nav-link active" href="{% url 'about_us' %}"><i class="fa fa-info-circle fa-fw"
+          aria-hidden="true"></i>&nbsp;About Us</a>
+    </li>
+    
+    <li class="nav-item" style="margin-right:5px; margin-top:5px; margin-bottom:5px;">
+    <div id="google_translate_element" ></div> 
+    </li>
+  </ul>
 
 
 
 
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
 
+  
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
 </body>
+
 </html>
