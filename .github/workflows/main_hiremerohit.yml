@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'hiremerohit'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2AE5B420D5B54D9C82638F44B927A89A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_461BA568781C423C9EC5F2DC2CBD7D97 }}
